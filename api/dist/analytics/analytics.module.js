@@ -6,17 +6,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppModule = void 0;
+exports.AnalyticsModule = void 0;
 const common_1 = require("@nestjs/common");
-const url_module_1 = require("./url/url.module");
-const prisma_module_1 = require("./prisma/prisma.module");
-const analytics_module_1 = require("./analytics/analytics.module");
-let AppModule = class AppModule {
+const analytics_controller_1 = require("./analytics.controller");
+const analytics_service_1 = require("./analytics.service");
+const prisma_module_1 = require("../prisma/prisma.module");
+let AnalyticsModule = class AnalyticsModule {
 };
-exports.AppModule = AppModule;
-exports.AppModule = AppModule = __decorate([
+exports.AnalyticsModule = AnalyticsModule;
+exports.AnalyticsModule = AnalyticsModule = __decorate([
     (0, common_1.Module)({
-        imports: [url_module_1.UrlModule, prisma_module_1.PrismaModule, analytics_module_1.AnalyticsModule],
+        imports: [prisma_module_1.PrismaModule],
+        controllers: [analytics_controller_1.AnalyticsController],
+        providers: [analytics_service_1.AnalyticsService],
     })
-], AppModule);
-//# sourceMappingURL=app.module.js.map
+], AnalyticsModule);
+//# sourceMappingURL=analytics.module.js.map

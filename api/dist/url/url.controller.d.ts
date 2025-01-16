@@ -7,7 +7,7 @@ export declare class UrlController {
     shortenUrl(shortenDto: ShortenDto): Promise<{
         shortUrl: string;
     }>;
-    redirectUrl(res: Response, shortUrl: string): Promise<void>;
+    redirectUrl(res: Response, shortUrl: string, ip: string): Promise<void>;
     getInfoUrl(shortUrl: string): Promise<{
         originalUrl: string;
         createdAt: Date;

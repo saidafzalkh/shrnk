@@ -22,10 +22,13 @@ export class UrlService {
     };
   }
 
-  async redirect(shortUrl: string) {
+  async redirect(shortUrl: string, ip: string) {
     const data = await this.prisma.url.update({
       where: { shortUrl },
-      data: { clickCount: { increment: 1 } },
+      data: {
+        clickCount: { increment: 1 },
+        analytics: { create: { ipAddress: ip } },
+      },
     });
 
     return data.originalUrl;

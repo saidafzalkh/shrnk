@@ -5,7 +5,7 @@ export declare class UrlService {
     shortenUrl(originalUrl: string): Promise<{
         shortUrl: string;
     }>;
-    redirect(shortUrl: string): Promise<string>;
+    redirect(shortUrl: string, ip: string): Promise<string>;
     getInfo(shortUrl: string): Promise<{
         originalUrl: string;
         createdAt: Date;

@@ -23,9 +23,9 @@ let UrlController = class UrlController {
     async shortenUrl(shortenDto) {
         return await this.service.shortenUrl(shortenDto.originalUrl);
     }
-    async redirectUrl(res, shortUrl) {
+    async redirectUrl(res, shortUrl, ip) {
         try {
-            const url = await this.service.redirect(shortUrl);
+            const url = await this.service.redirect(shortUrl, ip);
             if (url)
                 return res.redirect(url);
         }
@@ -75,8 +75,9 @@ __decorate([
     (0, common_1.Get)(':shortUrl'),
     __param(0, (0, common_1.Res)()),
     __param(1, (0, common_1.Param)('shortUrl')),
+    __param(2, (0, common_1.Ip)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, String]),
+    __metadata("design:paramtypes", [Object, String, String]),
     __metadata("design:returntype", Promise)
 ], UrlController.prototype, "redirectUrl", null);
 __decorate([

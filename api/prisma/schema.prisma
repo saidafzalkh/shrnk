@@ -8,9 +8,19 @@ datasource db {
 }
 
 model Url {
-  id          String   @id @default(cuid())
-  shortUrl    String   @unique
+  id          String      @id @default(cuid())
+  shortUrl    String      @unique
   originalUrl String
-  createdAt   DateTime @default(now())
-  clickCount  Int      @default(0)
+  createdAt   DateTime    @default(now())
+  clickCount  Int         @default(0)
+  analytics   Analytics[]
+}
+
+model Analytics {
+  id         String   @id @default(cuid())
+  ipAddress  String
+  accessedAt DateTime @default(now())
+
+  url   Url    @relation(fields: [urlId], references: [id], onDelete: Cascade)
+  urlId String
 }

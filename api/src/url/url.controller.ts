@@ -4,6 +4,7 @@ import {
   Delete,
   Get,
   InternalServerErrorException,
+  Ip,
   NotFoundException,
   Param,
   Post,
@@ -23,10 +24,13 @@ export class UrlController {
   }
 
   @Get(':shortUrl')
-  async redirectUrl(@Res() res: Response, @Param('shortUrl') shortUrl: string) {
+  async redirectUrl(
+    @Res() res: Response,
+    @Param('shortUrl') shortUrl: string,
+    @Ip() ip: string,
+  ) {
     try {
-      const url = await this.service.redirect(shortUrl);
-
+      const url = await this.service.redirect(shortUrl, ip);
       if (url) return res.redirect(url);
     } catch (error) {
       console.error(error);
