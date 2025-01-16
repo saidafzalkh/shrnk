@@ -9,9 +9,13 @@ services:
       - db
     environment:
       DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:${POSTGRES_PORT}/${POSTGRES_DB}
+      NODE_ENV: development
+    container_name: api
     volumes:
       - ./api:/app
       - /app/node_modules
+      - ./api/prisma:/app/prisma
+      - ./api/src:/app/src
 
   client:
     build:
@@ -21,6 +25,7 @@ services:
       - "3000:3000"
     depends_on:
       - api
+    container_name: client
     volumes:
       - ./client:/app
       - /app/node_modules
@@ -35,5 +40,6 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
     volumes:
       - db_data:/var/lib/postgresql/data
+    container_name: db
 volumes:
   db_data:

@@ -2,15 +2,15 @@ FROM node:22-alpine
 
 WORKDIR /app
 
-COPY package.json ./
-COPY pnpm-lock.yaml ./
+COPY package.json pnpm-lock.yaml ./
 
 RUN npm install -g pnpm
 RUN pnpm install
 
 COPY . .
 
-RUN pnpm build
+RUN pnpm prisma generate
 
 EXPOSE 4000
-CMD [ "pnpm", "start" ]
+
+CMD [ "pnpm", "start:dev" ]
