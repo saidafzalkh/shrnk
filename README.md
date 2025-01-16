@@ -13,3 +13,21 @@
 
 ⚠️ **Docker Setup is for Development Only**
 The current Docker configuration is optimized for development purposes.
+
+# TODO List for Short URL API
+
+## Core Functionality
+- [x] Create Short Link
+- [x] Redirect to Original URL
+- [x] Get Link Info
+- [x] Delete Short Link
+
+## Optional Features
+- [ ] Expiration Support
+- [ ] Analytics
+- [ ] Custom Alias
+
+## Extras
+- [x] Docker Setup
+- [ ] Tests
+- [ ] Basic UI
