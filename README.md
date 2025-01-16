@@ -10,24 +10,29 @@
   ```bash
   docker compose up --build
   ```
+3. Links:
+`http://localhost:3000/` - client (not yet)
+`http://localhost:4000/` - api
+`http://localhost:5432/` - postgres
+
 
 ⚠️ **Docker Setup is for Development Only**
 The current Docker configuration is optimized for development purposes.
 
-# TODO List for Short URL API
+## TODO List for Short URL API
 
-## Core Functionality
+#### Core Functionality
 - [x] Create Short Link
 - [x] Redirect to Original URL
 - [x] Get Link Info
 - [x] Delete Short Link
 
-## Optional Features
+#### Optional Features
 - [ ] Expiration Support
-- [ ] Analytics
+- [x] Analytics
 - [ ] Custom Alias
 
-## Extras
+#### Extras
 - [x] Docker Setup
 - [ ] Tests
 - [ ] Basic UI
