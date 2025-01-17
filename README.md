@@ -10,7 +10,7 @@
   ```bash
   docker compose up --build
   ```
-3. Links:
+3. Links: <br />
 `http://localhost:3000/` - client (not yet) <br />
 `http://localhost:4000/` - api <br />
 `http://localhost:5432/` - postgres <br />
