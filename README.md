@@ -11,9 +11,9 @@
   docker compose up --build
   ```
 3. Links:
-`http://localhost:3000/` - client (not yet)
-`http://localhost:4000/` - api
-`http://localhost:5432/` - postgres
+`http://localhost:3000/` - client (not yet) <br />
+`http://localhost:4000/` - api <br />
+`http://localhost:5432/` - postgres <br />
 
 
 ⚠️ **Docker Setup is for Development Only**
